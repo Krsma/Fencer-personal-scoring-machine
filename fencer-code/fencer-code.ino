@@ -2,7 +2,7 @@ int previous_state = 0;
 int hit_marker = 0;
 long int last_hit = 0;
 int light = LOW;
-const int buzzer = 9;
+const int buzzer = 11;
 
 const int TIME_BETWEEN = 1000;
 void setup() {
@@ -12,7 +12,7 @@ void setup() {
   
   //configure pin 2 as an input and enable the internal pull-up resistor
   pinMode(2, INPUT_PULLUP);
-  pinMode(13, OUTPUT);
+  pinMode(9, OUTPUT);
   pinMode(8, OUTPUT);
   pinMode(buzzer, OUTPUT);
 }
@@ -32,7 +32,7 @@ void loop() {
   if(millis() - last_hit < TIME_BETWEEN)
   {
     light = HIGH;
-    tone(buzzer, 2000);
+    tone(buzzer, 1500);
   }
   else
   {
